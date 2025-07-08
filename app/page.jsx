@@ -27,7 +27,7 @@ export default function Home() {
       const mediaRecorder = new MediaRecorder(stream);
       const audioChunks = [];
 
-      return new Promise<void>((resolve, reject) => {
+      return new Promise((resolve, reject) => {
         mediaRecorder.ondataavailable = (event) => {
           if (event.data.size > 0) {
             audioChunks.push(event.data);
